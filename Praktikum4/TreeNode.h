@@ -13,7 +13,7 @@ public:
 		: leftPtr(nullptr), // pointer to left subtree
 		data(d), // tree node data
 		rightPtr(nullptr), // pointer to right substree
-		frequency(0)
+		frequency(1)
 	{ }
 	// return copy of node's data
 	NODETYPE getData() const { return data; }
@@ -23,6 +23,6 @@ public:
 private:
 	TreeNode * leftPtr; // pointer to left subtree
 	NODETYPE data;
-	int frequency = 1;
+	int frequency ;
 	TreeNode * rightPtr; // pointer to right subtree
 }; // end class TreeNode

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <fstream>
 #include <new>
 #include <string>
 #include "TreeNode.h"
@@ -11,7 +12,7 @@ using namespace std;
 
 // Tree class-template definition
 template< typename NODETYPE > class Tree
-{
+{ 
 	public:
 		Tree(); // constructor
 		~Tree(); // destructor
@@ -42,6 +43,15 @@ template< typename NODETYPE > class Tree
 
 		TreeNode<NODETYPE>* getRoot() {
 			return rootPtr;
+		}
+		void writeToFile() {
+			ofstream ziel;
+			ziel.open("Results.txt", ios::out);
+			if (!ziel) {
+				cerr << " teams.txt konnte nicht gefunden werden" << endl;
+			}
+
+			ziel << inOrderTraversal() << endl;
 		}
 	private:
 		TreeNode< NODETYPE > * rootPtr;

@@ -28,6 +28,7 @@ int main()
 	
 		cout << "Anzahl der unterschiedlichen Wörter " << ": " << stringTree.size(stringTree.getRoot()) << endl;
 		cout << "Anzahl der gesammten Wörter " << ": " << stringTree.sum(stringTree.getRoot()) << endl;
+		stringTree.writeToFile();
 
 }
 
