@@ -11,8 +11,7 @@
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
-
+    
 	Tree <string> stringTree;
 	string data;
 	ifstream in("Heine.txt", ios::in);
