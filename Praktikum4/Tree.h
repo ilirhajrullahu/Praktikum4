@@ -25,6 +25,24 @@ template< typename NODETYPE > class Tree
 		TreeNode< NODETYPE > * binaryTreeSearch(const NODETYPE &) const;
 		std::string toString() const;
 		void deleteNode(const NODETYPE &);
+
+		int size(TreeNode<NODETYPE>* node)
+		{
+			if (node == nullptr)
+				return 0;
+			else
+				return(size(node->leftPtr) + 1 + size(node->rightPtr));
+		}
+		int sum(TreeNode<NODETYPE>* root)
+		{
+			if (root == nullptr)
+				return 0;
+			return (root->frequency + sum(root->leftPtr) + sum(root->rightPtr));
+		}
+
+		TreeNode<NODETYPE>* getRoot() {
+			return rootPtr;
+		}
 	private:
 		TreeNode< NODETYPE > * rootPtr;
 
@@ -39,5 +57,6 @@ template< typename NODETYPE > class Tree
 		bool deleteNodeHelper(TreeNode< NODETYPE > *&, const NODETYPE &);
 		void replaceNodeHelper(TreeNode< NODETYPE > *&, TreeNode< NODETYPE > *&);
 		void destructorHelper(TreeNode< NODETYPE > *);
+		int n = 1;
 	}; // end class Tree
 

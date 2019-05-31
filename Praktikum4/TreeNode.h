@@ -17,9 +17,12 @@ public:
 	{ }
 	// return copy of node's data
 	NODETYPE getData() const { return data; }
+	int getFrequency() {
+		return frequency;
+	}
 private:
 	TreeNode * leftPtr; // pointer to left subtree
 	NODETYPE data;
-	int frequency;
+	int frequency = 1;
 	TreeNode * rightPtr; // pointer to right subtree
 }; // end class TreeNode

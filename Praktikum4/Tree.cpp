@@ -44,7 +44,7 @@ void Tree< NODETYPE >::insertNodeHelper(
 			if (ptr->data < value)
 				insertNodeHelper(ptr->rightPtr, value);
 			else // duplicate data value ignored
-				std::cerr << value << " dup" << endl;
+				ptr->frequency++;
 		} // end else
 	} // end else
 } // end function insertNodeHelper
@@ -84,7 +84,7 @@ void Tree< NODETYPE >::inOrderHelper(TreeNode< NODETYPE > *ptr, std::stringstrea
 {
 	if (ptr != nullptr) {
 		inOrderHelper(ptr->leftPtr, outStream); // traverse left subtree  
-		outStream << ptr->data << ' '; // process node                
+		outStream << ptr->data << "." << "." << "." << "." << "." << "." << "." << ptr->frequency << endl; // process node                
 		inOrderHelper(ptr->rightPtr, outStream); // traverse right subtree
 	} // end if
 } // end function inOrderHelper
